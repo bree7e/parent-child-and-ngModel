@@ -2,9 +2,14 @@
   <h2>Parent component</h2>
   <p>app-child [value]="passedValue"</p>
   <p>(click)="newVersion()"</p>
+  <p>passedValue = <b>{{passedValue}}</b></p>
   <button (click)="newVersion()">Pass new value to child</button>
   <button (click)="clear()">Pass empty value to child</button>
-  <app-child [value]="passedValue" (onValueChanged)="handleChange($event)"></app-child>
+  <app-child 
+    [value]="passedValue" 
+    (onValueChanged)="handleChange($event)" 
+    (onValueSubmitted)="handleSubmit($event)">
+  </app-child>
   <ul>
     <li *ngFor="let change of changeList">{{change}}</li>
   </ul>    

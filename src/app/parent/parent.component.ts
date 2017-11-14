@@ -19,8 +19,13 @@ export class ParentComponent {
     this.passedValue = '';
   }
 
-  handleChange(emmitedData: string) {
-    this.changeList.push(emmitedData);
-    this.clear(); // очень важная для нас строчка
+  handleChange(emmitedValue: string) {
+    this.passedValue = emmitedValue;
   }
+
+  handleSubmit(emmitedValue: string) {
+    this.changeList.push(emmitedValue);
+    this.clear(); // important row
+  }
+
 }

@@ -1,8 +1,14 @@
 <div class="outline child">
   <h3>Child component</h3>
-  <button (click)="emitData()" >Add child's value to parent list</button>
+  <input 
+    class="child__control" 
+    type="text" 
+    [(ngModel)]="value"
+    (ngModelChange)="notifyParent($event)"
+    >
+  <button class="child__button" (click)="emitData()" >Add child's value to parent list</button>
   <p *ngIf="!value">An empty value was received from parent!</p>
-  <p *ngIf="value">Child's variable @Input() value = <b class="invert">{{ value }}</b></p>
+  <p *ngIf="value">Child's variable @Input() value = <b class="child__value">{{ value }}</b></p>
   <h4>Change log:</h4>
   <ul>
     <li *ngFor="let change of changeLog">{{change}}</li>

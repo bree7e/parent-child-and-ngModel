@@ -8,11 +8,16 @@ import { OnInit, OnChanges, SimpleChange  } from '@angular/core';
 })
 export class ChildComponent implements OnChanges {
   @Input() value: string;
-  @Output() onValueChanged = new EventEmitter<string>();
+  @Output() onValueChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onValueSubmitted: EventEmitter<string> = new EventEmitter<string>();
   changeLog: string[] = [];
 
   emitData() {
-    this.onValueChanged.emit(`Hello from child with '${this.value}'`);
+    this.onValueSubmitted.emit(`Hello from child with '${this.value}'`);
+  }
+
+  notifyParent(changedValue)   {
+    this.onValueChanged.emit(changedValue);
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {

@@ -2,9 +2,18 @@
     background-color: khaki;
     margin-top: 1rem;
 }
+.child__button {
+    margin-top: 0.5rem;
+}
 
-.invert {
+.child__value {
     background-color: black;
     color: white;
     padding: 2px;
+}
+
+.child__control {
+    display: block;
+    padding: 0.25rem;
+    width: 20rem;
 }
