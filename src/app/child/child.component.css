@@ -1,0 +1,10 @@
+.child {
+    background-color: khaki;
+    margin-top: 1rem;
+}
+
+.invert {
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
